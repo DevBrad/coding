@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/commentBoxTema/style.css" />
+    <title>Comment Box</title>
+  </head>
+  <body>
+    <main>
+      <form>
+        <input
+          type="text"
+          id="firstName"
+          placeholder="First Name"
+          pattern="^[A-Za-z -]+$"
+          title="click to enter your First Name"
+        />
+        <input
+          type="text"
+          id="lastName"
+          placeholder="Last Name"
+          pattern="^[A-Za-z -]+$"
+          title="click to enter your Last Name"
+        />
+        <input
+          type="email"
+          id="email"
+          placeholder="E-mail "
+          pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+        />
+        <input type="date" id="date" />
+        <textarea
+          title="click to enter your comment"
+          name=""
+          placeholder="Enter your comment here ..."
+        ></textarea>
+        <button
+          class="submit-btn"
+          type="submit"
+          title="click to share the comment!"
+        >
+          Share
+        </button>
+        <button
+          class="reset-btn"
+          type="reset"
+          title="click to reset the inputs value!"
+        >
+          Reset Inputs
+        </button>
+      </form>
+      <div></div>
+    </main>
+    <script src="/commentBoxTema/script.js"></script>
+  </body>
+</html>
