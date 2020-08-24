@@ -13,12 +13,12 @@ var i = 0;
 
 document
   .querySelector(".submit-btn")
-  .addEventListener("click", function(event) {
+  .addEventListener("click", function (event) {
     event.preventDefault();
   });
 
 //Show comments
-btn.onclick = function() {
+btn.onclick = function () {
   if (email.value && txt.value && firstName.value && lastName.value != "") {
     firstName.style.padding = "7px";
     lastName.style.padding = "7px";
@@ -44,13 +44,16 @@ btn.onclick = function() {
       "</h4>" +
       "<p>" +
       txt.value +
+      "<div id='wrapperBtns'>" +
       "<button title='click to delete the comment' class='dltBtn' id='deleteBtn-" +
       i +
       "' onclick='deleteComment(" +
       i +
       ")'>Delete</button>" +
-      "</p>" +
-      "</div >";
+      "<button title='click to change the comment' class='changeBtn' id='delete-comment" +
+      i +
+      " 'onclick='delete_button()'>Delete comment</button>";
+    +"</div >" + "</div >" + "</p>";
     i++;
   }
   if (!regex.test(firstName.value) && !regex.test(lastName.value)) {
@@ -69,17 +72,23 @@ btn.onclick = function() {
   }
 };
 
-const deleteComment = postId => {
+const deleteComment = (postId) => {
   console.log(postId);
   const commentToDelete = document.getElementById("comment-" + postId);
   console.log(commentToDelete);
   commentToDelete.remove();
 };
 
-resetBtn.onclick = function() {
+resetBtn.onclick = function () {
   firstName.style.padding = "15px";
   lastName.style.padding = "15px";
   email.style.padding = "15px";
   date.style.padding = "15px";
   txt.style.padding = "15px";
+};
+
+//DELETE COMMENT
+const delete_button = () => {
+  const text = document.querySelector(txt.value);
+  text.remove();
 };
